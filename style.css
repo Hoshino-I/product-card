@@ -1,0 +1,59 @@
+
+.title {
+    font: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 70px;
+    line-height: 78px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #515076;
+}
+
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    padding: 24px;
+    width: 320px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.card b {
+    margin-top: auto;
+    padding-top: 15px;
+}
+
+.price {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    font-weight: bold;
+}
+
+.category {
+    color: #A5A3B9;
+}
+
+.card h2, .card p, .card span, .card ul, .card b{
+    color: #515076;
+}
