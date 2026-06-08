@@ -1,6 +1,6 @@
 
 .title {
-    font: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 70px;
@@ -20,7 +20,17 @@
     padding: 20px;
 }
 
+.card-price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    font-family: 'Montserrat', sans-serif;
+    color: #515076;
+    font-weight: bold;
+}
+
 .card {
+    font-family: 'Montserrat', sans-serif;
     background-color: #f9f9f9;
     border-radius: 4px;
     padding: 24px;
@@ -28,7 +38,6 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    position: relative;
 }
 
 .card img {
@@ -38,22 +47,30 @@
     margin: 0 auto 20px auto;
 }
 
-.card b {
-    margin-top: auto;
-    padding-top: 15px;
-}
-
-.price {
-    position: absolute;
-    bottom: 24px;
-    right: 24px;
-    font-weight: bold;
-}
-
 .category {
+    font-family: 'Montserrat', sans-serif;
     color: #A5A3B9;
 }
 
-.card h2, .card p, .card span, .card ul, .card b{
+.card h2, .card p, .card span, .card ul{
     color: #515076;
+    list-style-position: inside;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding-left: 20px;
+    list-style-position: outside;
+    color: #515076;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
+.card li {
+    margin-bottom: 5px;
 }
