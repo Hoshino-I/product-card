@@ -74,3 +74,10 @@
 .card li {
     margin-bottom: 5px;
 }
+
+body {
+    background-image: url("img/dandelions.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: contain;
+}
