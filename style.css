@@ -1,0 +1,89 @@
+body {
+    background-image: url("img/dandelions.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: contain;
+}
+
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 70px;
+    line-height: 78px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #515076;
+}
+
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.product-card {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    padding: 24px;
+    width: 320px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card__image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.product-card__category {
+    font-family: 'Montserrat', sans-serif;
+    color: #A5A3B9;
+}
+
+.product-card__title, 
+.product-card__description, 
+.product-card__composition-title {
+    color: #515076;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.product-card__composition-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding-left: 20px;
+    list-style-position: outside;
+    color: #515076;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
+.product-card__composition-item {
+    margin-bottom: 5px;
+}
+
+.product-card__price-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    font-family: 'Montserrat', sans-serif;
+    color: #515076;
+    font-weight: bold;
+}
+
+.product-card__price-label,
+.product-card__price-value {
+    font-family: 'Montserrat', sans-serif;
+    color: #515076;
+}
