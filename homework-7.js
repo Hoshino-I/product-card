@@ -1,6 +1,6 @@
-const cityTemperature = (city, temperature) => `${city}${temperature}`;
+const cityTemperature = (city, temperature) => `Сейчас в ${city} температура ${temperature} градусов по Цельсию`;
 
-console.log(cityTemperature("Москва: ", "25°"));
+console.log(cityTemperature("Москвe", "25"));
 
 const speedOfLight = 300000;
 
