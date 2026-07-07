@@ -1,6 +1,6 @@
-  const showCityTevperature = (city, temperature) => `Сейчас в ${city} температура ${temperature} градусов по Цельсию`;
+  const showCityTemperature = (city, temperature) => `Сейчас в ${city} температура ${temperature} градусов по Цельсию`;
 
-console.log(showCityTevperature("Москвe", "25"));
+console.log(showCityTemperature("Москвe", "25"));
 
 const SPEED_OF_LIGHT = 300000;
 
