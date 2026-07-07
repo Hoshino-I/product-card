@@ -1,6 +1,6 @@
-  const createWeatherMessage = (city, temperature) => `Сейчас в ${city} температура ${temperature} градусов по Цельсию`;
+  const showWeatherMessage = (city, temperature) => `Сейчас в ${city} температура ${temperature} градусов по Цельсию`;
 
-console.log(createWeatherMessage("Москвe", "25"));
+console.log(showWeatherMessage("Москвe", "25"));
 
 const SPEED_OF_LIGHT = 300000;
 
