@@ -38,29 +38,57 @@ showPropertyValue(myCar, "color");
 
 productsArray = ["Банан", "Манго", "Яблоко"];
 
+
 const books = [
-  {name: "Думай и уверуй", author: "Ирахим абу Халид", yearOfmManufacture: 2025},
-  {name: "Великое достоинство Корана", author: "Амаш абу мухаммад", yearOfmManufacture: 2023},
-  {name: "История древнего рима", author: "Мери бирд", yearOfmManufacture: 2023}
+  {
+    name: "Думай и уверуй",
+    author: "Ирахим абу Халид",
+    yearOfmManufacture: 2025
+  },
+  {
+    name: "Великое достоинство Корана",
+    author: "Амаш абу мухаммад",
+    yearOfmManufacture: 2023
+  },
+  {
+    name: "История древнего рима",
+    author: "Мери бирд",
+    yearOfmManufacture: 2023
+  }
 ]
-books.push( {name: "Удивительные ответы на повседневные вопросы", author: "Йорди Перейра", yearOfmManufacture: 2022} );
+
+
+books.push( {
+  name: "Удивительные ответы на повседневные вопросы",
+  author: "Йорди Перейра",
+  yearOfmManufacture: 2022
+});
+
 
 const booksOfHarryPotter = [
-  {name: "Гарри Поттер и философский камень", author: "Джоан Роулинг", yearOfmManufacture: 1997},
-  {name: "Гарри Поттер и Тайная комната", author: "Джоан Роулинг", yearOfmManufacture: 1998},
-  {name: "Гарри Поттер и узник Азкабана", author: "Джоан Роулинг", yearOfmManufacture: 1999},
+  {
+    name: "Гарри Поттер и философский камень",
+    author: "Джоан Роулинг",
+    yearOfmManufacture: 1997
+  },
+  {
+    name: "Гарри Поттер и Тайная комната",
+    author: "Джоан Роулинг",
+    yearOfmManufacture: 1998
+  },
+  {
+    name: "Гарри Поттер и узник Азкабана",
+    author: "Джоан Роулинг",
+    yearOfmManufacture: 1999
+  },
 ]
 
 const allbooks = [ ...books, ...booksOfHarryPotter];
 
 const updateBooksRarity = (rarityBook) => {
-  return rarityBook.map(book => {
-  if (book.yearOfmManufacture < 2000) {
-    return { ...book, isRare: true };
-  } else {
-    return { ...book, isRare: false };
-  }
-  });
+  return book.yearOfmManufacture < 2000
+  ? { ...book, isRare: true}
+  : { ...book, isRare: false};
 }
 
 const rareBooksList = updateBooksRarity(allbooks)
