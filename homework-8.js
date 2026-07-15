@@ -86,9 +86,9 @@ const booksOfHarryPotter = [
 const allbooks = [ ...books, ...booksOfHarryPotter];
 
 const updateBooksRarity = (rarityBook) => {
-  return book.yearOfmManufacture < 2000
-  ? { ...book, isRare: true}
-  : { ...book, isRare: false};
+  return books.yearOfmManufacture < 2000
+  ? { ...books, isRare: true}
+  : { ...books, isRare: false};
 }
 
 const rareBooksList = updateBooksRarity(allbooks)
