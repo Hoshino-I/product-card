@@ -87,3 +87,8 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: #515076;
 }
+
+
+.button--active {
+    background-color: blue;
+}
