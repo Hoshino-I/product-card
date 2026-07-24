@@ -7,9 +7,9 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const filteredNumbers = numbers.filter(num => num >= 5);
 
-const cloth = ["Trousers", "Sweater", "Tshirt", "Socks", "Shorts"];
+const cloth = ["Trousers", "Sweaters", "Tshirts", "Sockses", "Shorts"];
 
-const hasSweater = cloth.includes("Sweater")
+const hasSweater = cloth.includes("Sweaters")
 
 const reverseArray = (arr) => {
   arr.reverse()
@@ -20,26 +20,23 @@ const commentsFilter = commentsArr.filter(comment => {
 });
 
 const changePostId = (arr) => {
-  return arr.map(comment => {
-    if (comment.id <= 5) {
-      return {...comment, postId: 2}
-    } else {
-      return {...comment, postId: 1}
-    }
-  });
+  return arr.map(comment => ({
+    ...comment,
+    postId: comment.id <= 5 ? 2 : 1
+  }));
 }
 const updatedComments = changePostId(commentsArr);
 
-const filterUserKeys = (userId) => {
-  return userId.map(comment => {
+const filterCommentKeys = (commentsList) => {
+  return commentsList.map(comment => {
   return {
     id: comment.id, 
     name: comment.name}
   });
 }
-const shortComments = filterUserKeys(commentsArr);
+const shortComments = filterCommentKeys(commentsArr);
 
-const validateComments = (invalid) => {
+const validatedComments = (invalid) => {
   return invalid.map(comment => {
     return {
       ...comment,
@@ -47,7 +44,7 @@ const validateComments = (invalid) => {
     };
   })
 };
-const validatedCommentsList = validateComments(commentsArr);
+const validatedCommentsList = validatedComments(commentsArr);
 
 const emailList = commentsArr.reduce((acc, item) => {
   acc.push(item.email);
@@ -56,9 +53,8 @@ const emailList = commentsArr.reduce((acc, item) => {
 }, []);
 
 const emailListMap =  commentsArr.map(comment => comment.email);
-const emailsString = commentsArr.toString();
-const emailsJoin = commentsArr.join(", ")
-
+const emailsToString = emailListMap.toString();
+const emailsByJoin = emailListMap.join(", ");
 
 reverseArray(numbers);
 reverseArray(cloth);
