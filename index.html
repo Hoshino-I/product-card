@@ -145,6 +145,7 @@
   <script type="module" src="./homework-9.js"></script>
   <script type="module" src="./comments.js"></script>
   <script type="module" src="./homework-10.js"></script>
+  <script type="module" src ="/homework-11.js"></script>
 
   <template id="product-template">
     <div class="product-card">
@@ -161,6 +162,51 @@
       </div>
     </div>
   </template>
+
+
+  <footer class="footer">
+    <div class="footer__about">
+      <h2 class="footer__logo">Product Cards</h2>
+      <p class="footer__text">У нас самые лучшие продукты для кожи!</p>
+      <div class="footer__socials">///</div>
+    </div>
+
+    <form class="footer__subscribe-form">
+      <label for="footer-email" class="footer__form-label">Подпишись на наши акции:</label>
+      
+      <div class="footer__form-group">
+        <input type="email" id="footer-email" name="userEmail" required class="footer__form-input" placeholder="Введите Email...">
+        <button type="submit" class="footer__form-btn">Подписаться</button>
+      </div>
+    </form>
+
+    <nav class="footer__nav">
+      <h3 class="footer__nav-title">Быстрые ссылки</h3>
+      <ul class="footer__nav-list">
+        <li class="footer__nav-item"><a href="#">Главная</a></li>
+        <li class="footer__nav-item"><a href="#">Магазин</a></li>
+        <li class="footer__nav-item"><a href="#">Контакты</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  
+  <button class="open__modal-btn">Регистрация</button>
+  <div class="overlay">
+    <div class="modal">
+      <button class="modal__close-btn">&times;</button>
+      <form class="modal__form">
+        <input class="modal__input__name" type="text" placeholder="Имя" required>
+        <input class="modal__input__last-name" type="text" placeholder="Фамилия" required>
+        <input class="modal__input__date-birth" type="date" placeholder="Дата рождения" required>
+        <input class="modal__input__age" type="number" placeholder="Возраст" required>
+        <input class="modal__input__email" type="text" placeholder="Email" required>
+        <input class="modal__input_password" type="password" placeholder="Пароль" required>
+        <input class="modal__input_password-confirm" type="password" placeholder="Подтвердите пароль" required>
+        <button class="modal__submit-btn" type="submit">Зарегистрироваться</button>
+      </form>
+    </div>
+  </div>
 
 </body>
 
