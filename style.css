@@ -160,3 +160,17 @@ body {
 .overlay.modal-showed {
     display: flex;
 }
+
+.footer__socials {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* 2. Уменьшаем размер самих картинок-иконок */
+.footer__social-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
