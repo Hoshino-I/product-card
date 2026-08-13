@@ -19,7 +19,6 @@ footerForm.addEventListener('submit', (event) => {
   console.log(formData);
 });
 
-
 openModalBtn.addEventListener('click', function() {
   divOverlay.classList.add('modal-showed')
 });
@@ -37,28 +36,16 @@ modalForm.addEventListener('submit', function(event) {
 
   const inputPassword = modalPassword.value;
   const inputPasswordConfirm = modalPasswordConfirm.value;
-  const inputName = modalInputName.value;
-  const inputLatName = modalInputLastName.value;
-  const inputAge = modalInputage.value;
-  const inputDateBirth = modalInputDateBirth.value;
-  const inputEmail = modalInputemail.value;
 
   if (inputPassword !== inputPasswordConfirm) {
     alert("Регистрация отклонена: пароли не совпадают!");
     return;
   }
 
-  user = {
-    firstName: modalInputName.value,
-    lastName: modalInputLastName.value,
-    age: modalInputage.value,
-    dateBirth: modalInputDateBirth.value,
-    email: modalInputemail.value,
-    password: modalPassword.value,
-    passwordConfirm: modalPasswordConfirm.value,
+  user = Object.fromEntries(new FormData(modalForm));
 
-    createdOn: new Date()
-  };
+  user.createdOn = new Date();
+
   console.log(user);
   divOverlay.classList.remove('modal-showed');
   modalForm.reset();
