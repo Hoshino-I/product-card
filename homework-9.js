@@ -68,5 +68,5 @@ console.log(shortComments);
 console.log(validatedCommentsList);
 console.log(emailList);
 console.log(emailListMap);
-console.log(emailsString);
-console.log(emailsJoin);
+console.log(emailsToString);
+console.log(emailsByJoin);

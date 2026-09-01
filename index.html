@@ -139,13 +139,7 @@
 
 
   </div>
-  <script src="main.js"></script>
-  <script src="homework-7.js"></script>
-  <script src="homework-8.js"></script>
-  <script type="module" src="./homework-9.js"></script>
-  <script type="module" src="./comments.js"></script>
-  <script type="module" src="./homework-10.js"></script>
-  <script type="module" src ="/homework-11.js"></script>
+  <script type="module" src="main.js"></script>
 
   <template id="product-template">
     <div class="product-card">
@@ -206,23 +200,24 @@
     </nav>
   </footer>
 
-  
-  <button class="open__modal-btn">Регистрация</button>
-  <div class="overlay">
-    <div class="modal">
-      <button class="modal__close-btn">&times;</button>
-      <form class="modal__form">
-        <input class="modal__input__name" name="name" type="text" placeholder="Имя" required>
-        <input class="modal__input__last-name" name="lastName" type="text" placeholder="Фамилия" required>
-        <input class="modal__input__date-birth" name="dateBirth" type="date" placeholder="Дата рождения" required>
-        <input class="modal__input__age" name="age" type="number" placeholder="Возраст" required>
-        <input class="modal__input__email" name="email" type="text" placeholder="Email" required>
-        <input class="modal__input_password" name="password" type="password" placeholder="Пароль" required>
-        <input class="modal__input_password-confirm" name="passwordConfirm" type="password" placeholder="Подтвердите пароль" required>
-        <button class="modal__submit-btn" type="submit">Зарегистрироваться</button>
-      </form>
-    </div>
+<button class="open__modal-btn">Регистрация</button>
+
+<div id="registration-modal" class="overlay">
+  <div class="modal">
+    <button class="modal__close-btn">&times;</button>
+    <form id="registration-form" class="modal__form">
+      <input class="modal__input__name" name="name" type="text" placeholder="Имя" required>
+      <input class="modal__input__last-name" name="lastName" type="text" placeholder="Фамилия" required>
+      <input class="modal__input__date-birth" name="dateBirth" type="date" placeholder="Дата рождения" required>
+      <input class="modal__input__age" name="age" type="number" placeholder="Возраст" required>
+      <input class="modal__input__email" name="email" type="text" placeholder="Email" required>
+      <input class="modal__input_password" name="password" type="password" placeholder="Пароль" required>
+      <input class="modal__input_password-confirm" name="passwordConfirm" type="password" placeholder="Подтвердите пароль" required>
+      <button class="modal__submit-btn" type="submit">Зарегистрироваться</button>
+    </form>
   </div>
+</div>
+
 
 </body>
 

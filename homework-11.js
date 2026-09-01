@@ -1,3 +1,4 @@
+import { Modal } from './modal.js';
 const footerForm = document.querySelector('.footer__subscribe-form')
 const emailInput = document.querySelector('.footer__form-input')
 const openModalBtn = document.querySelector('.open__modal-btn')
@@ -13,6 +14,8 @@ const modalInputage = document.querySelector('.modal__input__age')
 const modalInputemail = document.querySelector('.modal__input__email')
 let user;
 
+const regModal = new Modal('registration-modal');
+
 footerForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const formData = {email: emailInput.value}
@@ -20,16 +23,13 @@ footerForm.addEventListener('submit', (event) => {
 });
 
 openModalBtn.addEventListener('click', function() {
-  divOverlay.classList.add('modal-showed')
+  regModal.open();
 });
 
-modalCloseBtn.addEventListener('click', function() {
-  divOverlay.classList.remove('modal-showed')
-});
 
 modalForm.addEventListener('submit', function(event) {
   event.preventDefault();
-  if (!modalForm.checkValidity()) {
+  if (!regForm.isValid()) {
     alert("Регистрация отклонена: форма заполнена неверно!");
     return;
   }
@@ -42,12 +42,12 @@ modalForm.addEventListener('submit', function(event) {
     return;
   }
 
-  user = Object.fromEntries(new FormData(modalForm));
+  user = regForm.getValues();
 
   user.createdOn = new Date();
 
   console.log(user);
-  divOverlay.classList.remove('modal-showed');
+  regModal.close();
   modalForm.reset();
 
 })
