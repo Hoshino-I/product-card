@@ -139,9 +139,86 @@
 
 
   </div>
-  <script src="main.js"></script>
-  <script src="homework-7.js"></script>
-  <script src="homework-8.js"></script>
+  <script type="module" src="main.js"></script>
+
+  <template id="product-template">
+    <div class="product-card">
+      <img class="product-card__image" src="" alt="">
+      <span class="product-card__category"></span>
+      <h2 class="product-card__title"></h2>
+      <p class="product-card__description"></p>
+      <span class="product-card__composition-title">Состав: </span>
+      <ul class="product-card__composition-list">
+      </ul>
+      <div class="product-card__price-box">
+        <b class="product-card__price-label">Цена</b>
+        <span class="product-card__price-value"></span>
+      </div>
+    </div>
+  </template>
+
+
+  <footer class="footer">
+    <div class="footer__about">
+      <h2 class="footer__logo">Product Cards</h2>
+      <p class="footer__text">У нас самые лучшие продукты для кожи!</p>
+      <div class="footer__socials">
+
+        <a class="footer__social-link" href="#" target="_blank">
+          <img class="footer__social-icon" src="img/telegram.png">
+        </a>
+
+        <a class="footer__social-link" href="#" target="_blank">
+          <img class="footer__social-icon" src="img/vk.png">
+        </a>
+
+        </div>
+    </div>
+
+    <form class="footer__subscribe-form">
+      <label for="footer-email" class="footer__form-label">Подпишись на наши акции:</label>
+      
+      <div class="footer__form-group">
+        <input type="email" id="footer-email" name="userEmail" required class="footer__form-input" placeholder="Введите Email...">
+        <button type="submit" class="footer__form-btn">Подписаться</button>
+      </div>
+    </form>
+
+    <nav class="footer__nav">
+      <h3 class="footer__nav-title">Быстрые ссылки</h3>
+      <ul class="footer__nav-list">
+        <li class="footer__nav-item">
+          <a href="#">Главная</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="#">Магазин</a>
+        </li>
+        <li class="footer__nav-item">
+          <a href="#">Контакты</a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+
+<button class="open__modal-btn">Регистрация</button>
+
+<div id="registration-modal" class="overlay">
+  <div class="modal">
+    <button class="modal__close-btn">&times;</button>
+    <form id="registration-form" class="modal__form">
+      <input class="modal__input__name" name="name" type="text" placeholder="Имя" required>
+      <input class="modal__input__last-name" name="lastName" type="text" placeholder="Фамилия" required>
+      <input class="modal__input__date-birth" name="dateBirth" type="date" placeholder="Дата рождения" required>
+      <input class="modal__input__age" name="age" type="number" placeholder="Возраст" required>
+      <input class="modal__input__email" name="email" type="text" placeholder="Email" required>
+      <input class="modal__input_password" name="password" type="password" placeholder="Пароль" required>
+      <input class="modal__input_password-confirm" name="passwordConfirm" type="password" placeholder="Подтвердите пароль" required>
+      <button class="modal__submit-btn" type="submit">Зарегистрироваться</button>
+    </form>
+  </div>
+</div>
+
+
 </body>
 
 </html>
