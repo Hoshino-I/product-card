@@ -4,8 +4,8 @@ class Drink {
   constructor(name, size, price, temperature) {
 
     if (new.target === Drink) {
-    throw new Error("Нельзя создавать экземпляры абстрактного класса Drink напрямую!");
-}
+      throw new Error("Нельзя создавать экземпляры абстрактного класса Drink напрямую!");
+    }
 
     this.name = name;
     this.size = size;
@@ -39,7 +39,7 @@ class Drink {
 
 class Coffee extends Drink {
   constructor(name, size, price, temperature, milkType, beanType) {
-    super(name, size, price, temperature)
+    super(name, size, price, temperature);
 
     this.milkType = milkType;
     this.beanType = beanType;
@@ -48,10 +48,19 @@ class Coffee extends Drink {
 
 class Tea extends Drink {
   constructor(name, size, price, temperature, teaType, hasSugar) {
-    super(name, size, price, temperature)
+    super(name, size, price, temperature);
 
     this.teaType = teaType;
     this.hasSugar = hasSugar;
+  }
+}
+
+class Lemonade extends Drink {
+  constructor(name, size, price, temperature, lemonadeType, hasIce) {
+    super(name, size, price, temperature);
+
+    this.lemonadeType = lemonadeType;
+    this.hasIce = hasIce;
   }
 }
 
@@ -68,14 +77,16 @@ class Cafe {
   orderDrink(drink) {
     console.log(`Поступил заказ на напиток: ${drink.name}`);
 
-    drink.serve()
+    drink.serve();
   }
 }
 
 const myCafe = new Cafe("Кафе хаус", "кл. Пушкина, д. 10")
-const myCoffee = new Coffee("Капучино", "250мл", 300, 20, "Овсяное", "Арабика")
-const myTea = new Tea("Черный чай с пах-пахом", "300мл", 250, 20, "Черный", "Без сахара")
+const myCoffee = new Coffee("Капучино", "250мл", 300, 75, "Овсяное", "Арабика")
+const myTea = new Tea("Черный чай с пах-пахом", "300мл", 250, 75, "Черный", "Без сахара")
+const myLemonade = new Lemonade("Лемонад", "0.5л", 150, 5, "Клубничный", "Со льдом")
 
 console.log(myCafe.getInfo());
 myCafe.orderDrink(myCoffee);
 myCafe.orderDrink(myTea);
+myCafe.orderDrink(myLemonade);
