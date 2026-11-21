@@ -40,4 +40,5 @@ export class Modal {
   #initClose() {
     this.closeButton.addEventListener('click', this.handleClose);
   }
+  
 }
