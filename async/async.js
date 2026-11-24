@@ -2,6 +2,7 @@ const statusMessage = document.getElementById("status-message");
 const cardsContainer = document.getElementById("cards-container");
 const getAllBtn = document.getElementById('get-all-btn');
 const deleteAllBtn = document.getElementById('delete-all-btn');
+const cardTemplate = document.getElementById('user-card-template');
 
 async function initApp() {
   const savedUsers = localStorage.getItem('users');
@@ -37,26 +38,22 @@ async function fetchUsers() {
 function renderUsers(users) {
   cardsContainer.innerHTML = "";
 
-  users.forEach((user) =>{
-    const card = document.createElement("div");
-    card.classList.add('card');
+  users.forEach((user) => {
+    const cardClone = cardTemplate.content.cloneNode(true);
 
-    card.innerHTML = `
-    <h3>${user.name}</h3>
-    <p>Возраст: ${user.age}</p>
-    <p>Фамилие: ${user.surname}</p>
-    <p>Почта: ${user.email}</p>
-    <button class="delete-btn" data-id="${user.id}">Удалить</button>
-    `;
-    cardsContainer.appendChild(card);
+    cardClone.querySelector('.user-name').textContent = user.name;
+    cardClone.querySelector('.user-age').textContent = `Возраст: ${user.age}`;
+    cardClone.querySelector('.user-surname').textContent = `Фамилие: ${user.surname}`;
+    cardClone.querySelector('.user-email').textContent = `Почта: ${user.email}`;
     
-    const deleteBtn = card.querySelector(".delete-btn")
+    const deleteBtn = cardClone.querySelector(".delete-btn")
     deleteBtn.addEventListener('click', () => {
       const updatedUsers = users.filter((item) => item.id !== user.id);
       localStorage.setItem('users', JSON.stringify(updatedUsers));
       renderUsers(updatedUsers);
-    })
-  })
+    });
+    cardsContainer.appendChild(cardClone);
+  });
 }
 
 deleteAllBtn.addEventListener('click', () => {
@@ -67,7 +64,7 @@ deleteAllBtn.addEventListener('click', () => {
 
 getAllBtn.addEventListener("click", async () => {
   if (cardsContainer.children.length === 3) {
-    statusMessage.textContent = 'у вас уже отоброжены все пользователи!';
+    statusMessage.textContent = 'у вас уже отображены все пользователи!';
     return;
   }
   await fetchUsers();
