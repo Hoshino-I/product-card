@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>Пользователи (async + LocalStorage)</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+      .cards-conteiner {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .card {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 15px;
+        width: 220px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="control">
+      <button id="get-all-btn">Получить все карточки</button>
+      <button id="delete-all-btn">Удалить все карточки</button>
+    </div>
+
+    <p id="status-message"></p>
+    <div id="cards-container" class="cards-container"></div>
+    <script type="module" src="async.js"></script>
+  </body>
+</html>
