@@ -3,12 +3,16 @@ const cardsContainer = document.getElementById("cards-container");
 const getAllBtn = document.getElementById('get-all-btn');
 const deleteAllBtn = document.getElementById('delete-all-btn');
 const cardTemplate = document.getElementById('user-card-template');
+let totalUsersCount = 0;
 
 async function initApp() {
   const savedUsers = localStorage.getItem('users');
 
   if (savedUsers) {
     const users = JSON.parse(savedUsers);
+    if (users.length > 0) {
+      totalUsersCount = users.length;
+    }
     renderUsers(users)
     console.log("Взяли из памяти: ", users);
   } else {
@@ -25,6 +29,7 @@ async function fetchUsers() {
       throw new Error('Ошибка при загрузке данных');
     }
     const users = await response.json();
+    totalUsersCount = users.length;
     localStorage.setItem('users', JSON.stringify(users));
     statusMessage.textContent = "";
     renderUsers(users)
@@ -63,7 +68,7 @@ deleteAllBtn.addEventListener('click', () => {
 })
 
 getAllBtn.addEventListener("click", async () => {
-  if (cardsContainer.children.length === 3) {
+  if (totalUsersCount > 0 && cardsContainer.children.length === totalUsersCount) {
     statusMessage.textContent = 'у вас уже отображены все пользователи!';
     return;
   }
